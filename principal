@@ -1,0 +1,41 @@
+#IMPORTANDO A BIBLIOTECA TKINTER QUE REALIZA A PARTE GRÁFICA
+from tkinter import*
+import random
+from time import sleep
+
+def inicio_jogo():
+  jogador = nome.get()
+  if jogador == '0':
+    texto_start = Label(tela,text="A batalha foi adiada... Volte quando quiser! ")
+    texto_start.grid(column=0,row=14)
+  else
+
+#INÍCIO DA JANELA GRÁFICA - CRIEI UMA VARIÁVEL TELA QUE HERDA AS FUNÇÕES DA BIBLIOTECA TKINTER. A FUNÇÃO TK() INICIA A TELA.
+tela = Tk()
+tela.geometry("400x240")
+#title cria o título da nossa tela
+tela.title("Jogo pedra, papel e tesoura. Vamos Jogar?")
+lista = ["SAIR    [0]", "PEDRA   [1]", "PAPEL   [2]" , "TESOURA [3]"]
+
+for c in range(0,4):
+  texto_lista = Label(tela,text=lista[c])
+  texto_lista.grid(column=0,row=4+c)
+
+
+#a variavel texto_inicial recebe o label. No label precisamos colocar qual a nosta tela e o texto que deve ser mostrado
+texto_inicial = Label(tela,text="Escolha um número para a batalha: ")
+#temos que passar a posição do texto na tela. column vai ser o numero da coluna e row será linha.
+texto_inicial.grid(column=0,row=11)
+
+# a opção entry cria um textarea para entrada de dados
+nome = Entry(tela)
+nome["width"] = 10
+nome["font"] = ("Arial", "10")
+nome.grid(column=0, row=12)
+nome.focus() #mantem o foco no textarea para entrada
+btn = Button(tela, text="Jogar", command=inicio_jogo)
+btn.grid(column=0, row=13)
+
+
+#mainloop faz a tela continuar sendo mostrada.
+tela.mainloop()
